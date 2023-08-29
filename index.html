@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8"> <!-- Add this line to specify character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Age Range Program</title>
+
+<style>
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f2f2f2;
+}
+
+.container {
+  text-align: left;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 80px auto;
+}
+
+h1 {
+  margin: 0 0 10px;
+  color: #333;
+}
+
+p {
+  color: #666;
+  margin: 0 0 10px;
+  padding-top: 20px;
+}
+
+label {
+  display: inline-block;
+  width: 120px;
+  color: #333;
+  margin-top: 10px;
+}
+
+input[type="number"] {
+  width: calc(75% - 130px); /* Adjusted width to fit better */
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 15px;
+}
+
+button {
+  background-color: #08284d;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+img {
+  max-width: 100%;
+  margin-top: 20px;
+}
+
+
+</style>
+</head>
+<body>
+ <div class="container">
+    <div>
+      <h1>Age Range Program</h1>
+      <label for="age">Enter your age:</label><br>
+      <input type="number" id="age">
+      <button onclick="displayMessage()">Submit</button>
+      <p id="message"></p>
+    </div>
+    <img src="img.jpg" alt="Image">
+  </div>
+  <script>
+    function displayMessage() {
+      const age = parseInt(document.getElementById("age").value);
+      let message = "";
+
+      if (age >= 1 && age <= 17) {
+        message = "You're not major yet.";
+      } else if (age >= 18 && age <= 49) {
+        message = "You are major, but not senior yet.";
+      } else if (age >= 50 && age <= 64) {
+        message = "You are senior, but not yet retired.";
+      } else {
+        message = "Your age is outside the specified ranges.";
+      }
+
+      document.getElementById("message").textContent = message;
+    }
+  </script>
+
+</body>
+</html>
+
+ 
